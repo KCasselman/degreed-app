@@ -1,0 +1,5 @@
+<h1>HELLO WORLD!!!!</h1>
+<div *ngFor="let movie of movieMetadata$ | async" >
+    <p>{{movie | json}}</p>
+</div>
+<button (click)="getMovies()">90s Batman Films</button>
