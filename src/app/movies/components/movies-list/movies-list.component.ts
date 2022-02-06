@@ -21,7 +21,7 @@ export class MoviesListComponent implements OnInit {
         this.moviesSubjectService.getMovies(searchParameter);
     }
 
-    getMovies() {
-        this.moviesSubjectService.getMovies('Batman');
-    }
+    // getMovies() {
+    //     this.moviesSubjectService.getMovies('Batman');
+    // }
 }

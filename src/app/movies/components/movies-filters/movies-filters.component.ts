@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieFilters } from '../../constants.ts/movies-filters';
+import { MoviesSubjectService } from '../../services/movies-subject.service';
 
 @Component({
     selector: 'app-movies-filters',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class MoviesFiltersComponent implements OnInit {
-    constructor() { }
+    movieFilters: typeof MovieFilters = MovieFilters;
+    constructor(private moviesSubjectService: MoviesSubjectService) { }
 
     ngOnInit() { }
+
+    getFilteredMovies(movieFilter: MovieFilters) {
+        this.moviesSubjectService.getFilteredMoviesByYear(movieFilter);
+    }
 }

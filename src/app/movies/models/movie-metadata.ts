@@ -1,6 +1,6 @@
 export class MovieMetadata {
     title: string; 
-    year: number;
+    year: string;
     rated: string;
     released: Date;
     runtime: string;
@@ -10,7 +10,8 @@ export class MovieMetadata {
 
     constructor(movieMetdataDto: MovieMetdataDto) {
         this.title = movieMetdataDto.Title;
-        this.year = parseInt(movieMetdataDto.Year);
+        this.year = movieMetdataDto.Year;
+        // this.year = parseInt(movieMetdataDto.Year);
         this.rated = movieMetdataDto.Rated;
         this.released = new Date(Date.parse(movieMetdataDto.Released));
         this.runtime = movieMetdataDto.Runtime;

@@ -2,7 +2,7 @@
 // KC - should the id be a number?
 export class Movie {
     title: string;
-    year: number;
+    year: string;
     imdbId: string;
     type: string;
     poster: string;
@@ -11,7 +11,8 @@ export class Movie {
     // KC - should this be set to a type or any?
     constructor(movieDto: any = {}) {
         this.title = movieDto.Title;
-        this.year = parseInt(movieDto.Year);
+        this.year = movieDto.Year;
+        // this.year = parseInt(movieDto.Year);
         this.imdbId = movieDto.imdbID;
         this.type = movieDto.Type;
         this.poster = movieDto.Poster;
