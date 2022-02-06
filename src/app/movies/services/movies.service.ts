@@ -1,9 +1,9 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { map, Observable } from "rxjs";
 import { apiKey } from "../../api-credentials";
-import { MovieSearchResult } from "../models/movie";
-import { MovieMetadata } from "../models/movie-metadata";
+import { MovieSearchResultDto, Movie, MovieDto } from "../models/movie";
+import { MovieMetadata, MovieMetdataDto } from "../models/movie-metadata";
 // import { ApiCredentials } from '../../app/api-credentials';
 
 @Injectable()
@@ -15,19 +15,16 @@ export class MoviesService {
     }
     
 
-    getMoviesBySearch(searchParameter: string): Observable<MovieSearchResult> {
+    getMoviesBySearch(searchParameter: string): Observable<Movie[]> {
         // KC - do some logic in case searchParameter contains a space (underscore represents space)
-        return this.httpClient.get<any>(`http://www.omdbapi.com/?s=${searchParameter}&apiKey=${this.apiKey}`);
+        return this.httpClient
+            .get<MovieSearchResultDto>(`http://www.omdbapi.com/?s=${searchParameter}&type=movie&apiKey=${this.apiKey}`).
+            pipe(map((response: MovieSearchResultDto) => response.Search.map((movie: MovieDto)=> new Movie(movie))));
     }
 
-    getMovieMetadataById(imdbID: number): Observable<MovieMetadata> {
-        return this.httpClient.get<any>(`http://www.omdbapi.com/?i=${imdbID}&apiKey=${this.apiKey}`);
-        // const first10Movies = movies.Search.slice(0, 10);
-        // let allMovieMetadata: any[] = [];
-        // first10Movies.map((movie: any) => {
-        //   this.httpClient.get<any>(`http://www.omdbapi.com/?i=${movie.imdbID}&apiKey=98c1ccfd`).subscribe(movieMetadata => {
-        //     allMovieMetadata.push(movieMetadata);
-        //   });
-        // });
+    getMovieMetadataById(imdbID: string): Observable<MovieMetadata> {
+        return this.httpClient
+            .get<MovieMetdataDto>(`http://www.omdbapi.com/?i=${imdbID}&apiKey=${this.apiKey}`)
+            .pipe(map((response: MovieMetdataDto) => new MovieMetadata(response)));
     }
 }
