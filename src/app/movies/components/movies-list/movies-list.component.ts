@@ -6,7 +6,7 @@ import { MoviesSubjectService } from '../../services/movies-subject.service';
 @Component({
     selector: 'app-movies-list',
     templateUrl: './movies-list.component.html',
-    styleUrls: ['./movies-list.component.sass']
+    styleUrls: ['./movies-list.component.scss']
 })
 
 export class MoviesListComponent implements OnInit {
@@ -20,8 +20,4 @@ export class MoviesListComponent implements OnInit {
         const searchParameter = 'Batman';
         this.moviesSubjectService.getMovies(searchParameter);
     }
-
-    // getMovies() {
-    //     this.moviesSubjectService.getMovies('Batman');
-    // }
 }
