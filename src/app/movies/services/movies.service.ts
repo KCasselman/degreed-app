@@ -4,7 +4,6 @@ import { map, Observable } from "rxjs";
 import { apiKey } from "../../api-credentials";
 import { MovieSearchResultDto, Movie, MovieDto } from "../models/movie";
 import { MovieMetadata, MovieMetdataDto } from "../models/movie-metadata";
-// import { ApiCredentials } from '../../app/api-credentials';
 
 @Injectable()
 export class MoviesService {

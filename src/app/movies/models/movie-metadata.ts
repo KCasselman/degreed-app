@@ -11,7 +11,6 @@ export class MovieMetadata {
     constructor(movieMetdataDto: MovieMetdataDto) {
         this.title = movieMetdataDto.Title;
         this.year = movieMetdataDto.Year;
-        // this.year = parseInt(movieMetdataDto.Year);
         this.rated = movieMetdataDto.Rated;
         this.released = new Date(Date.parse(movieMetdataDto.Released));
         this.runtime = movieMetdataDto.Runtime;
@@ -21,7 +20,6 @@ export class MovieMetadata {
     }
 }
 
-// KC - should any array type be changed?
 export interface MovieMetdataDto {
     Title: string; 
     Year: string;
@@ -37,8 +35,7 @@ export interface MovieMetdataDto {
     Country: string;
     Awards: string;
     Poster: string;
-    // KC - make RatingDTO  { Source = string | Value = string }
-    Ratings: Object[];
+    Ratings: RatingDto[];
     Metascore: string;
     imdbRating: string;
     imdbVotes: string;
@@ -49,4 +46,9 @@ export interface MovieMetdataDto {
     Production: string;
     Website: string;
     Response: string;
+}
+
+interface RatingDto {
+    Source: string;
+    Value: string;
 }

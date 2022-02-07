@@ -32,12 +32,21 @@ export class MoviesSubjectService {
     }
 
     getFilteredMoviesByYear(movieFilter: MovieFilters): void{
-        if (movieFilter === MovieFilters.nineteenNineties) {
+        // KC - can these if elses be consolidated?
+        if (movieFilter === MovieFilters.nineteenEighties) {
+            const ninetiesFilms = this.allMovies.filter((movie: MovieMetadata) => movie.year.slice(0, 3) === '198');
+            
+            this.moviesMetadataBS.next(ninetiesFilms);
+        } else if (movieFilter === MovieFilters.nineteenNineties) {
             const ninetiesFilms = this.allMovies.filter((movie: MovieMetadata) => movie.year.slice(0, 3) === '199');
             
             this.moviesMetadataBS.next(ninetiesFilms);
         } else if (movieFilter === MovieFilters.twoThousands) {
             const twoThousandsFilms = this.allMovies.filter((movie: MovieMetadata) => movie.year.slice(0, 3) === '200');
+            
+            this.moviesMetadataBS.next(twoThousandsFilms);
+        } else if (movieFilter === MovieFilters.twoThousandTens) {
+            const twoThousandsFilms = this.allMovies.filter((movie: MovieMetadata) => movie.year.slice(0, 3) === '201');
             
             this.moviesMetadataBS.next(twoThousandsFilms);
         }
