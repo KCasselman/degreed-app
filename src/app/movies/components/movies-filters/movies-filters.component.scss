@@ -1,1 +1,28 @@
-@import '../../../app-colors.scss'
+@import '../../../../app-colors.scss';
+
+button {
+    height: 36px;
+    width: 92px;
+    border-width: 1px;
+    border-color: $color-filter-inactive-border;
+    color: $color-filter-inactive-text;
+    background-color: $color-filter-inactive;
+
+    &:nth-child(1) {
+        border-radius: 3px 0px 0px 3px;
+    }
+    &:nth-child(2) {
+        border-radius: 0px 0px 0px 0px;
+    }
+    &:nth-child(3) {
+        border-radius: 0px 0px 0px 0px;
+    }
+    &:nth-child(4) {
+        border-radius: 0px 3px 3px 0px;
+    }
+    &.current-filter {
+        background-color: $color-filter-active;
+        color: $color-filter-active-text;
+        border-color: $color-filter-active-border;
+    }
+}

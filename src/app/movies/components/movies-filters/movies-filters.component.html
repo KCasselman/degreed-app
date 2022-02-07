@@ -1,4 +1,4 @@
-<button (click)="getFilteredMovies(movieFilters.nineteenEighties)">{{movieFilters.nineteenEighties}}</button>
-<button (click)="getFilteredMovies(movieFilters.nineteenNineties)">{{movieFilters.nineteenNineties}}</button>
-<button (click)="getFilteredMovies(movieFilters.twoThousands)">{{movieFilters.twoThousands}}</button>
-<button (click)="getFilteredMovies(movieFilters.twoThousandTens)">{{movieFilters.twoThousandTens}}</button>
+<button [ngClass]="{'current-filter': currentFilter === movieFilters.nineteenEighties}" (click)="getFilteredMovies(movieFilters.nineteenEighties)">{{movieFilters.nineteenEighties}}</button>
+<button [ngClass]="{'current-filter': currentFilter === movieFilters.nineteenNineties}" (click)="getFilteredMovies(movieFilters.nineteenNineties)">{{movieFilters.nineteenNineties}}</button>
+<button [ngClass]="{'current-filter': currentFilter === movieFilters.twoThousands}" (click)="getFilteredMovies(movieFilters.twoThousands)">{{movieFilters.twoThousands}}</button>
+<button [ngClass]="{'current-filter': currentFilter === movieFilters.twoThousandTens}" (click)="getFilteredMovies(movieFilters.twoThousandTens)">{{movieFilters.twoThousandTens}}</button>

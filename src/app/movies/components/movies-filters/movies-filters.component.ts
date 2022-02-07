@@ -10,11 +10,13 @@ import { MoviesSubjectService } from '../../services/movies-subject.service';
 
 export class MoviesFiltersComponent implements OnInit {
     movieFilters: typeof MovieFilters = MovieFilters;
+    currentFilter: MovieFilters;
     constructor(private moviesSubjectService: MoviesSubjectService) { }
 
     ngOnInit() { }
 
     getFilteredMovies(movieFilter: MovieFilters) {
+        this.currentFilter = movieFilter;
         this.moviesSubjectService.getFilteredMoviesByYear(movieFilter);
     }
 }
