@@ -2,7 +2,6 @@
 
 .container {
   max-width: 42em;
-	width: clamp(320px, 65%, 65%);
 	padding: 24px;
 
   .card {
@@ -99,7 +98,7 @@
   }
 }
 
-@media(max-width: 829px) {
+@media(max-width: 414px) {
     .card {
         .release {
             float: none;
