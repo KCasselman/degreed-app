@@ -1,6 +1,26 @@
 <div class="movies-filters-container">
-    <button [ngClass]="{'current-filter': currentFilter === movieFilters.twoThousandTens}" (click)="getFilteredMovies(movieFilters.twoThousandTens)">{{movieFilters.twoThousandTens}}</button>
-    <button [ngClass]="{'current-filter': currentFilter === movieFilters.twoThousands}" (click)="getFilteredMovies(movieFilters.twoThousands)">{{movieFilters.twoThousands}}</button>
-    <button [ngClass]="{'current-filter': currentFilter === movieFilters.nineteenNineties}" (click)="getFilteredMovies(movieFilters.nineteenNineties)">{{movieFilters.nineteenNineties}}</button>
-    <button [ngClass]="{'current-filter': currentFilter === movieFilters.nineteenEighties}" (click)="getFilteredMovies(movieFilters.nineteenEighties)">{{movieFilters.nineteenEighties}}</button>
+    <button
+        type="button"
+        aria-label="Button filters movies down to those released in the two thousand and tens"
+        [ngClass]="{'current-filter': currentFilter === movieFilters.twoThousandTens}"
+        (click)="getFilteredMovies(movieFilters.twoThousandTens)">{{movieFilters.twoThousandTens}}
+    </button>
+    <button
+        type="button"
+        aria-label="Button filters movies down to those released in the two thousands"
+        [ngClass]="{'current-filter': currentFilter === movieFilters.twoThousands}"
+        (click)="getFilteredMovies(movieFilters.twoThousands)">{{movieFilters.twoThousands}}
+    </button>
+    <button
+        type="button"
+        aria-label="Button filters movies down to those released in the nineteen nineties"
+        [ngClass]="{'current-filter': currentFilter === movieFilters.nineteenNineties}"
+        (click)="getFilteredMovies(movieFilters.nineteenNineties)">{{movieFilters.nineteenNineties}}
+    </button>
+    <button
+        type="button"
+        aria-label="Button filters movies down to those released in the nineteen eighties"
+        [ngClass]="{'current-filter': currentFilter === movieFilters.nineteenEighties}"
+        (click)="getFilteredMovies(movieFilters.nineteenEighties)">{{movieFilters.nineteenEighties}}
+    </button>
 </div>

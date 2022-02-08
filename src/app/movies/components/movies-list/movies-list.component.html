@@ -13,7 +13,7 @@
             <p class="plot">{{movie.plot}}</p>
             <br>
             <br>
-            <button (click)="goToImdbSite(movie.imdbId)">View on IMDB</button>
+            <button type="button" aria-label="Button opens imdb movie page in a new tab" (click)="goToImdbSite(movie.imdbId)">View on IMDB</button>
         </div>
     </div>
 </div>
