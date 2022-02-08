@@ -11,7 +11,7 @@
     border: 2px solid $color-movie-list-card-border;
     border-radius: 8px;
     overflow: hidden;
-    color: $color-movie-list-card;
+    background-color: $color-movie-list-card;
   
       img {
         margin: 1em;
@@ -54,7 +54,7 @@
     
         .rated {
           font-family:'Courier New', Courier, monospace;
-          color: $color-rating;
+          color: $color-rating-text;
           border: 1px solid $color-rating-border;
           padding-left: .4em;
           padding-right: .4em;
@@ -87,7 +87,7 @@
         margin: 1em;
         padding: .5em 3em .5em 3em;
         border-radius: .4em;
-        border: 2px solid currentColor;
+        border: 1px solid $color-movie-list-card;
         color: $color-imdb-button-text;
         background-color: $color-imdb-button;
         font-weight: bold;
