@@ -20,4 +20,8 @@ export class MoviesListComponent implements OnInit {
         const searchParameter = 'Batman';
         this.moviesSubjectService.getMovies(searchParameter);
     }
+
+    goToImdbSite(imdbId: string) {
+        window.open(`https://imdb.com/title/${imdbId}`, '_blank');
+    }
 }

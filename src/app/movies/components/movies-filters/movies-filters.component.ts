@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MovieFilters } from '../../constants.ts/movies-filters';
 import { MoviesSubjectService } from '../../services/movies-subject.service';
 
@@ -8,12 +8,10 @@ import { MoviesSubjectService } from '../../services/movies-subject.service';
     styleUrls: ['./movies-filters.component.scss']
 })
 
-export class MoviesFiltersComponent implements OnInit {
+export class MoviesFiltersComponent {
     movieFilters: typeof MovieFilters = MovieFilters;
     currentFilter: MovieFilters;
     constructor(private moviesSubjectService: MoviesSubjectService) { }
-
-    ngOnInit() { }
 
     getFilteredMovies(movieFilter: MovieFilters) {
         this.currentFilter = movieFilter;

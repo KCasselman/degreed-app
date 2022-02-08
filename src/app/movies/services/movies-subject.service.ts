@@ -1,13 +1,13 @@
-import { Injectable, NgModule } from '@angular/core';
-import { BehaviorSubject, Observable, take, zip, filter, map } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, take, zip } from 'rxjs';
 import { MovieFilters } from '../constants.ts/movies-filters';
-import { Movie, MovieDto, MovieSearchResultDto } from '../models/movie'; // KC - fix imports to barrel files
+import { Movie } from '../models/movie';
 import { MovieMetadata } from '../models/movie-metadata';
 import { MoviesService } from './movies.service';
 
 @Injectable()
 export class MoviesSubjectService {
-    private moviesMetadataBS = new BehaviorSubject<MovieMetadata[]>(null); // KC - rename?
+    private moviesMetadataBS = new BehaviorSubject<MovieMetadata[]>(null);
     private lastSearchParameter: string = '';
     private allMovies: MovieMetadata[];
 
@@ -17,7 +17,6 @@ export class MoviesSubjectService {
     constructor(private moviesService: MoviesService) { }
     
     getMovies(searchParameter: string): Observable<MovieMetadata[]> {
-        // Check if we're requesting for movies that we already have
         if (this.lastSearchParameter !== searchParameter) {
             this.lastSearchParameter = searchParameter;
          
@@ -32,24 +31,21 @@ export class MoviesSubjectService {
     }
 
     getFilteredMoviesByYear(movieFilter: MovieFilters): void{
-        // KC - can these if elses be consolidated?
+        let firstThreeNumbersOfYear;
+
         if (movieFilter === MovieFilters.nineteenEighties) {
-            const ninetiesFilms = this.allMovies.filter((movie: MovieMetadata) => movie.year.slice(0, 3) === '198');
-            
-            this.moviesMetadataBS.next(ninetiesFilms);
+            firstThreeNumbersOfYear = '198';
         } else if (movieFilter === MovieFilters.nineteenNineties) {
-            const ninetiesFilms = this.allMovies.filter((movie: MovieMetadata) => movie.year.slice(0, 3) === '199');
-            
-            this.moviesMetadataBS.next(ninetiesFilms);
+            firstThreeNumbersOfYear = '199';
         } else if (movieFilter === MovieFilters.twoThousands) {
-            const twoThousandsFilms = this.allMovies.filter((movie: MovieMetadata) => movie.year.slice(0, 3) === '200');
-            
-            this.moviesMetadataBS.next(twoThousandsFilms);
+            firstThreeNumbersOfYear = '200';
         } else if (movieFilter === MovieFilters.twoThousandTens) {
-            const twoThousandsFilms = this.allMovies.filter((movie: MovieMetadata) => movie.year.slice(0, 3) === '201');
-            
-            this.moviesMetadataBS.next(twoThousandsFilms);
+            firstThreeNumbersOfYear = '201';
         }
+
+        const filteredFilms = this.allMovies.filter((movie: MovieMetadata) => movie.year.slice(0, 3) === firstThreeNumbersOfYear);
+            
+        this.moviesMetadataBS.next(filteredFilms);
     }
 
     private getMoviesMetadata(movies: Movie[]) {

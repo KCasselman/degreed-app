@@ -12,7 +12,7 @@ import { MoviesFiltersComponent } from './components/movies-filters/movies-filte
   imports: [
     CommonModule
   ],
-  exports: [MoviesListComponent, MoviesFiltersComponent],
+  exports: [MoviesListComponent],
   providers: [MoviesService, MoviesSubjectService]
 })
 export class MoviesModule { }

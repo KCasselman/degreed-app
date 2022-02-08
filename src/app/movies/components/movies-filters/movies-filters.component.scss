@@ -1,5 +1,12 @@
 @import '../../../../app-colors.scss';
 
+.movies-filters-container {
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
 button {
     height: 36px;
     width: 92px;

@@ -15,7 +15,6 @@ export class MoviesService {
     
 
     getMoviesBySearch(searchParameter: string): Observable<Movie[]> {
-        // KC - do some logic in case searchParameter contains a space (underscore represents space)
         return this.httpClient
             .get<MovieSearchResultDto>(`http://www.omdbapi.com/?s=${searchParameter}&type=movie&apiKey=${this.apiKey}`).
             pipe(map((response: MovieSearchResultDto) => response.Search.map((movie: MovieDto)=> new Movie(movie))));
