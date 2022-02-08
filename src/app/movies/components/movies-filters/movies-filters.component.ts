@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MovieFilters } from '../../constants.ts/movies-filters';
+import { MovieFilters } from '../../constants/movies-filters';
 import { MoviesSubjectService } from '../../services/movies-subject.service';
 
 @Component({

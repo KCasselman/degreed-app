@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, take, zip } from 'rxjs';
-import { MovieFilters } from '../constants.ts/movies-filters';
+import { MovieFilters } from '../constants/movies-filters';
 import { Movie } from '../models/movie';
 import { MovieMetadata } from '../models/movie-metadata';
 import { MoviesService } from './movies.service';
