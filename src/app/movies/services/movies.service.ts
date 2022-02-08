@@ -12,7 +12,6 @@ export class MoviesService {
     constructor(private httpClient: HttpClient) {
         this.apiKey = apiKey;
     }
-    
 
     getMoviesBySearch(searchParameter: string): Observable<Movie[]> {
         return this.httpClient

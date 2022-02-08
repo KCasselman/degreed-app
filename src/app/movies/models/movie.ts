@@ -14,7 +14,6 @@ export class Movie {
     }
 }
 
-
 export interface MovieSearchResultDto {
     Search: MovieDto[];
     totalResults: string;

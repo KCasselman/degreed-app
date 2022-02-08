@@ -10,7 +10,7 @@ import { MoviesSubjectService } from '../../services/movies-subject.service';
 })
 
 export class MoviesListComponent implements OnInit {
-    movieMetadata$: Observable<MovieMetadata[] | null>;
+    movieMetadata$: Observable<MovieMetadata[]>;
     
     constructor(private moviesSubjectService: MoviesSubjectService) {
         this.movieMetadata$ = this.moviesSubjectService.moviesMetadata$

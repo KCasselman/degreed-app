@@ -5,8 +5,6 @@ import { MoviesSubjectService } from './services/movies-subject.service';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 import { MoviesFiltersComponent } from './components/movies-filters/movies-filters.component';
 
-
-
 @NgModule({
   declarations: [MoviesListComponent, MoviesFiltersComponent],
   imports: [

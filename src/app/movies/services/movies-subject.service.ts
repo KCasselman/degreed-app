@@ -13,7 +13,6 @@ export class MoviesSubjectService {
 
     moviesMetadata$ = this.moviesMetadataBS.asObservable();
 
-
     constructor(private moviesService: MoviesService) { }
     
     getMovies(searchParameter: string): Observable<MovieMetadata[]> {
@@ -54,7 +53,9 @@ export class MoviesSubjectService {
         const first10Movies = movies.slice(0, numberOfMoviesToRetrieve);
         const moviesMetadata$: Observable<MovieMetadata>[] = first10Movies.map((movie: Movie) => this.moviesService.getMovieMetadataById(movie.imdbId));
 
-        zip(moviesMetadata$).subscribe((moviesMetadata: MovieMetadata[]) => {
+        zip(moviesMetadata$)
+        .pipe(take(1))
+        .subscribe((moviesMetadata: MovieMetadata[]) => {
             const sortedFilms = moviesMetadata.sort((a, b) => a.released.getTime() - b.released.getTime());
             
             this.allMovies = sortedFilms;
