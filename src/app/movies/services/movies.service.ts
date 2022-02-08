@@ -16,13 +16,13 @@ export class MoviesService {
 
     getMoviesBySearch(searchParameter: string): Observable<Movie[]> {
         return this.httpClient
-            .get<MovieSearchResultDto>(`http://www.omdbapi.com/?s=${searchParameter}&type=movie&apiKey=${this.apiKey}`).
+            .get<MovieSearchResultDto>(`https://www.omdbapi.com/?s=${searchParameter}&type=movie&apiKey=${this.apiKey}`).
             pipe(map((response: MovieSearchResultDto) => response.Search.map((movie: MovieDto)=> new Movie(movie))));
     }
 
     getMovieMetadataById(imdbID: string): Observable<MovieMetadata> {
         return this.httpClient
-            .get<MovieMetdataDto>(`http://www.omdbapi.com/?i=${imdbID}&apiKey=${this.apiKey}`)
+            .get<MovieMetdataDto>(`https://www.omdbapi.com/?i=${imdbID}&apiKey=${this.apiKey}`)
             .pipe(map((response: MovieMetdataDto) => new MovieMetadata(response)));
     }
 }
