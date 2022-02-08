@@ -44,19 +44,21 @@ export class MoviesSubjectService {
         }
 
         const filteredFilms = this.allMovies.filter((movie: MovieMetadata) => movie.year.slice(0, 3) === firstThreeNumbersOfYear);
-            
-        this.moviesMetadataBS.next(filteredFilms);
+        const sortedFilteredFilms = filteredFilms.sort((a, b) => a.released.getTime() - b.released.getTime());
+
+        this.moviesMetadataBS.next(sortedFilteredFilms);
     }
 
     private getMoviesMetadata(movies: Movie[]) {
         const numberOfMoviesToRetrieve = 10;
         const first10Movies = movies.slice(0, numberOfMoviesToRetrieve);
-
         const moviesMetadata$: Observable<MovieMetadata>[] = first10Movies.map((movie: Movie) => this.moviesService.getMovieMetadataById(movie.imdbId));
 
         zip(moviesMetadata$).subscribe((moviesMetadata: MovieMetadata[]) => {
-            this.allMovies = moviesMetadata;
-            this.moviesMetadataBS.next(moviesMetadata)
+            const sortedFilms = moviesMetadata.sort((a, b) => a.released.getTime() - b.released.getTime());
+            
+            this.allMovies = sortedFilms;
+            this.moviesMetadataBS.next(sortedFilms);
         });
     }
 }
