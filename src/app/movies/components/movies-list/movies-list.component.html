@@ -1,19 +1,23 @@
-<div class="container">
+<main class="container" aria-label="Batman movie application that allows filtering by decade">
     <app-movies-filters></app-movies-filters>
-    <div *ngFor="let movie of movieMetadata$ | async" class="card">
-        <img src="{{movie.poster}}" alt="{{movie.title}} Movie Poster">
-        <div class="text-wrapper">
-            <h3 class="title">{{movie.title}}</h3>
-            <hr class="solid">
-            <div class="info-wrapper">
-                <span class="rated">{{movie.rated}}</span>
-                <span class="runtime">{{movie.runtime}}</span>
-                <span class="release">{{movie.released | date:'dd MMM yyyy'}}</span>
-            </div>
-            <p class="plot">{{movie.plot}}</p>
-            <br>
-            <br>
-            <button type="button" aria-label="Button opens imdb movie page in a new tab" (click)="goToImdbSite(movie.imdbId)">View on IMDB</button>
-        </div>
-    </div>
-</div>
+    <section aria-label="List of Batman movies based on selected filter">
+        <ul>
+            <li *ngFor="let movie of movieMetadata$ | async" class="card">
+                <img src="{{movie.poster}}" alt="{{movie.title}} Movie Poster">
+                <section class="text-wrapper" aria-label="Movie metadata">
+                    <h3 class="title">{{movie.title}}</h3>
+                    <hr class="solid" aria-hidden="true">
+                    <div class="info-wrapper">
+                        <span class="rated">{{movie.rated}}</span>
+                        <span class="runtime">{{movie.runtime}}</span>
+                        <span class="release">{{movie.released | date:'dd MMM yyyy'}}</span>
+                    </div>
+                    <p class="plot">{{movie.plot}}</p>
+                    <br>
+                    <br>
+                    <button type="button" aria-label="Button opens imdb movie page in a new tab" (click)="goToImdbSite(movie.imdbId)">View on IMDB</button>
+                </section>
+            </li>
+        </ul>
+    </section>
+</main>
