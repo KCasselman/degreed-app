@@ -1,0 +1,2267 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "MovieDto",
+            "id": "interface-MovieDto-487e5d8a62089d991b12793eb63327bf6649198525efad89f292b6bc07d8ddcba38245c01f738f24af7f45c9b69ef2e061a8c54884f7b59ef163c74c1de757a3",
+            "file": "src/app/movies/models/movie.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export class Movie {\r\n    title: string;\r\n    year: string;\r\n    imdbId: string;\r\n    type: string;\r\n    poster: string;\r\n\r\n    constructor(movieDto: MovieDto) {\r\n        this.title = movieDto.Title;\r\n        this.year = movieDto.Year;\r\n        this.imdbId = movieDto.imdbID;\r\n        this.type = movieDto.Type;\r\n        this.poster = movieDto.Poster;\r\n    }\r\n}\r\n\r\nexport interface MovieSearchResultDto {\r\n    Search: MovieDto[];\r\n    totalResults: string;\r\n    Response: string;\r\n}\r\n\r\nexport interface MovieDto {\r\n    Title: string;\r\n    Year: string;\r\n    imdbID: string;\r\n    Type: string;\r\n    Poster: string;\r\n}",
+            "properties": [
+                {
+                    "name": "imdbID",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "Poster",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "Title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "Type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                },
+                {
+                    "name": "Year",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "MovieMetdataDto",
+            "id": "interface-MovieMetdataDto-664e68a7d87ac6f614cda4c83e5f37a8448e6e86e482c4460527d505d2487ab6c22ecefc0c690f203b2cbbe0b7645c29d86e07f2ce969ddb8aa9fbf46ce5e2fe",
+            "file": "src/app/movies/models/movie-metadata.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export class MovieMetadata {\r\n    title: string; \r\n    year: string;\r\n    rated: string;\r\n    released: Date;\r\n    runtime: string;\r\n    plot: string;\r\n    poster: string;\r\n    imdbId: string;\r\n\r\n    constructor(movieMetdataDto: MovieMetdataDto) {\r\n        this.title = movieMetdataDto.Title;\r\n        this.year = movieMetdataDto.Year;\r\n        this.rated = movieMetdataDto.Rated;\r\n        this.released = new Date(Date.parse(movieMetdataDto.Released));\r\n        this.runtime = movieMetdataDto.Runtime;\r\n        this.plot = movieMetdataDto.Plot;\r\n        this.poster = movieMetdataDto.Poster;\r\n        this.imdbId = movieMetdataDto.imdbID;\r\n    }\r\n}\r\n\r\nexport interface MovieMetdataDto {\r\n    Title: string; \r\n    Year: string;\r\n    Rated: string;\r\n    Released: string;\r\n    Runtime: string;\r\n    Genre: string;\r\n    Director: string;\r\n    Writer: string;\r\n    Actors: string;\r\n    Plot: string;\r\n    Language: string;\r\n    Country: string;\r\n    Awards: string;\r\n    Poster: string;\r\n    Ratings: RatingDto[];\r\n    Metascore: string;\r\n    imdbRating: string;\r\n    imdbVotes: string;\r\n    imdbID: string;\r\n    Type: string;\r\n    DVD: string;\r\n    BoxOffice: string;\r\n    Production: string;\r\n    Website: string;\r\n    Response: string;\r\n}\r\n\r\ninterface RatingDto {\r\n    Source: string;\r\n    Value: string;\r\n}",
+            "properties": [
+                {
+                    "name": "Actors",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                },
+                {
+                    "name": "Awards",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 36
+                },
+                {
+                    "name": "BoxOffice",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 45
+                },
+                {
+                    "name": "Country",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 35
+                },
+                {
+                    "name": "Director",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                },
+                {
+                    "name": "DVD",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 44
+                },
+                {
+                    "name": "Genre",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                },
+                {
+                    "name": "imdbID",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 42
+                },
+                {
+                    "name": "imdbRating",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 40
+                },
+                {
+                    "name": "imdbVotes",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 41
+                },
+                {
+                    "name": "Language",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                },
+                {
+                    "name": "Metascore",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 39
+                },
+                {
+                    "name": "Plot",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "Poster",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 37
+                },
+                {
+                    "name": "Production",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 46
+                },
+                {
+                    "name": "Rated",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "Ratings",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "RatingDto[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 38
+                },
+                {
+                    "name": "Released",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                },
+                {
+                    "name": "Response",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 48
+                },
+                {
+                    "name": "Runtime",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "Title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "Type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 43
+                },
+                {
+                    "name": "Website",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 47
+                },
+                {
+                    "name": "Writer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                },
+                {
+                    "name": "Year",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "MovieSearchResultDto",
+            "id": "interface-MovieSearchResultDto-487e5d8a62089d991b12793eb63327bf6649198525efad89f292b6bc07d8ddcba38245c01f738f24af7f45c9b69ef2e061a8c54884f7b59ef163c74c1de757a3",
+            "file": "src/app/movies/models/movie.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export class Movie {\r\n    title: string;\r\n    year: string;\r\n    imdbId: string;\r\n    type: string;\r\n    poster: string;\r\n\r\n    constructor(movieDto: MovieDto) {\r\n        this.title = movieDto.Title;\r\n        this.year = movieDto.Year;\r\n        this.imdbId = movieDto.imdbID;\r\n        this.type = movieDto.Type;\r\n        this.poster = movieDto.Poster;\r\n    }\r\n}\r\n\r\nexport interface MovieSearchResultDto {\r\n    Search: MovieDto[];\r\n    totalResults: string;\r\n    Response: string;\r\n}\r\n\r\nexport interface MovieDto {\r\n    Title: string;\r\n    Year: string;\r\n    imdbID: string;\r\n    Type: string;\r\n    Poster: string;\r\n}",
+            "properties": [
+                {
+                    "name": "Response",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "Search",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MovieDto[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "totalResults",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "RatingDto",
+            "id": "interface-RatingDto-664e68a7d87ac6f614cda4c83e5f37a8448e6e86e482c4460527d505d2487ab6c22ecefc0c690f203b2cbbe0b7645c29d86e07f2ce969ddb8aa9fbf46ce5e2fe",
+            "file": "src/app/movies/models/movie-metadata.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export class MovieMetadata {\r\n    title: string; \r\n    year: string;\r\n    rated: string;\r\n    released: Date;\r\n    runtime: string;\r\n    plot: string;\r\n    poster: string;\r\n    imdbId: string;\r\n\r\n    constructor(movieMetdataDto: MovieMetdataDto) {\r\n        this.title = movieMetdataDto.Title;\r\n        this.year = movieMetdataDto.Year;\r\n        this.rated = movieMetdataDto.Rated;\r\n        this.released = new Date(Date.parse(movieMetdataDto.Released));\r\n        this.runtime = movieMetdataDto.Runtime;\r\n        this.plot = movieMetdataDto.Plot;\r\n        this.poster = movieMetdataDto.Poster;\r\n        this.imdbId = movieMetdataDto.imdbID;\r\n    }\r\n}\r\n\r\nexport interface MovieMetdataDto {\r\n    Title: string; \r\n    Year: string;\r\n    Rated: string;\r\n    Released: string;\r\n    Runtime: string;\r\n    Genre: string;\r\n    Director: string;\r\n    Writer: string;\r\n    Actors: string;\r\n    Plot: string;\r\n    Language: string;\r\n    Country: string;\r\n    Awards: string;\r\n    Poster: string;\r\n    Ratings: RatingDto[];\r\n    Metascore: string;\r\n    imdbRating: string;\r\n    imdbVotes: string;\r\n    imdbID: string;\r\n    Type: string;\r\n    DVD: string;\r\n    BoxOffice: string;\r\n    Production: string;\r\n    Website: string;\r\n    Response: string;\r\n}\r\n\r\ninterface RatingDto {\r\n    Source: string;\r\n    Value: string;\r\n}",
+            "properties": [
+                {
+                    "name": "Source",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 52
+                },
+                {
+                    "name": "Value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 53
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "User",
+            "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
+            "file": "src/stories/User.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {}\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "MoviesService",
+            "id": "injectable-MoviesService-9b7c69be0ca2627325c153f8de1bdc603d5855f18784f87df0a15c29a42d2a06703762af23a1c0fe989f398439f3e613ab60eb8e25b8e85db97c1ec7ce98069a",
+            "file": "src/app/movies/services/movies.service.ts",
+            "properties": [
+                {
+                    "name": "apiKey",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "getMovieMetadataById",
+                    "args": [
+                        {
+                            "name": "imdbID",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<MovieMetadata>",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "imdbID",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getMoviesBySearch",
+                    "args": [
+                        {
+                            "name": "searchParameter",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<Movie[]>",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "searchParameter",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { HttpClient } from \"@angular/common/http\";\r\nimport { Injectable } from \"@angular/core\";\r\nimport { map, Observable } from \"rxjs\";\r\nimport { apiKey } from \"../../api-credentials\";\r\nimport { MovieSearchResultDto, Movie, MovieDto } from \"../models/movie\";\r\nimport { MovieMetadata, MovieMetdataDto } from \"../models/movie-metadata\";\r\n\r\n@Injectable()\r\nexport class MoviesService {\r\n    private apiKey: string;\r\n\r\n    constructor(private httpClient: HttpClient) {\r\n        this.apiKey = apiKey;\r\n    }\r\n\r\n    getMoviesBySearch(searchParameter: string): Observable<Movie[]> {\r\n        return this.httpClient\r\n            .get<MovieSearchResultDto>(`https://www.omdbapi.com/?s=${searchParameter}&type=movie&apiKey=${this.apiKey}`).\r\n            pipe(map((response: MovieSearchResultDto) => response.Search.map((movie: MovieDto)=> new Movie(movie))));\r\n    }\r\n\r\n    getMovieMetadataById(imdbID: string): Observable<MovieMetadata> {\r\n        return this.httpClient\r\n            .get<MovieMetdataDto>(`https://www.omdbapi.com/?i=${imdbID}&apiKey=${this.apiKey}`)\r\n            .pipe(map((response: MovieMetdataDto) => new MovieMetadata(response)));\r\n    }\r\n}",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "httpClient",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "httpClient",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "MoviesSubjectService",
+            "id": "injectable-MoviesSubjectService-0af9f595825ef68aafd47ee293210d417cca5e1df6d391f11f2ac255faa9ee3cf5cc599492a3339d814c58449ac9b08560ffd1b58372cdde87660ec5ba509f8f",
+            "file": "src/app/movies/services/movies-subject.service.ts",
+            "properties": [
+                {
+                    "name": "allMovies",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MovieMetadata[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "lastSearchParameter",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "moviesMetadata$",
+                    "defaultValue": "this.moviesMetadataBS.asObservable()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "moviesMetadataBS",
+                    "defaultValue": "new BehaviorSubject<MovieMetadata[]>(null)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "getFilteredMoviesByYear",
+                    "args": [
+                        {
+                            "name": "movieFilter",
+                            "type": "MovieFilters",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "movieFilter",
+                            "type": "MovieFilters",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getMovies",
+                    "args": [
+                        {
+                            "name": "searchParameter",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<MovieMetadata[]>",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "searchParameter",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getMoviesMetadata",
+                    "args": [
+                        {
+                            "name": "movies",
+                            "type": "Movie[]",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 51,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "movies",
+                            "type": "Movie[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { BehaviorSubject, Observable, take, zip } from 'rxjs';\r\nimport { MovieFilters } from '../constants/movies-filters';\r\nimport { Movie } from '../models/movie';\r\nimport { MovieMetadata } from '../models/movie-metadata';\r\nimport { MoviesService } from './movies.service';\r\n\r\n@Injectable()\r\nexport class MoviesSubjectService {\r\n    private moviesMetadataBS = new BehaviorSubject<MovieMetadata[]>(null);\r\n    private lastSearchParameter: string = '';\r\n    private allMovies: MovieMetadata[];\r\n\r\n    moviesMetadata$ = this.moviesMetadataBS.asObservable();\r\n\r\n    constructor(private moviesService: MoviesService) { }\r\n    \r\n    getMovies(searchParameter: string): Observable<MovieMetadata[]> {\r\n        if (this.lastSearchParameter !== searchParameter) {\r\n            this.lastSearchParameter = searchParameter;\r\n         \r\n            this.moviesService.getMoviesBySearch(searchParameter)\r\n            .pipe(take(1))\r\n            .subscribe((movies: Movie[]) => {\r\n                this.getMoviesMetadata(movies);\r\n            });\r\n        }\r\n\r\n        return this.moviesMetadata$;\r\n    }\r\n\r\n    getFilteredMoviesByYear(movieFilter: MovieFilters): void{\r\n        let firstThreeNumbersOfYear;\r\n\r\n        if (movieFilter === MovieFilters.nineteenEighties) {\r\n            firstThreeNumbersOfYear = '198';\r\n        } else if (movieFilter === MovieFilters.nineteenNineties) {\r\n            firstThreeNumbersOfYear = '199';\r\n        } else if (movieFilter === MovieFilters.twoThousands) {\r\n            firstThreeNumbersOfYear = '200';\r\n        } else if (movieFilter === MovieFilters.twoThousandTens) {\r\n            firstThreeNumbersOfYear = '201';\r\n        }\r\n\r\n        const filteredFilms = this.allMovies.filter((movie: MovieMetadata) => movie.year.slice(0, 3) === firstThreeNumbersOfYear);\r\n        const sortedFilteredFilms = filteredFilms.sort((a, b) => a.released.getTime() - b.released.getTime());\r\n\r\n        this.moviesMetadataBS.next(sortedFilteredFilms);\r\n    }\r\n\r\n    private getMoviesMetadata(movies: Movie[]) {\r\n        const numberOfMoviesToRetrieve = 10;\r\n        const first10Movies = movies.slice(0, numberOfMoviesToRetrieve);\r\n        const moviesMetadata$: Observable<MovieMetadata>[] = first10Movies.map((movie: Movie) => this.moviesService.getMovieMetadataById(movie.imdbId));\r\n\r\n        zip(moviesMetadata$)\r\n        .pipe(take(1))\r\n        .subscribe((moviesMetadata: MovieMetadata[]) => {\r\n            const sortedFilms = moviesMetadata.sort((a, b) => a.released.getTime() - b.released.getTime());\r\n            \r\n            this.allMovies = sortedFilms;\r\n            this.moviesMetadataBS.next(sortedFilms);\r\n        });\r\n    }\r\n}",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "moviesService",
+                        "type": "MoviesService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 14,
+                "jsdoctags": [
+                    {
+                        "name": "moviesService",
+                        "type": "MoviesService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [
+        {
+            "name": "Movie",
+            "id": "class-Movie-487e5d8a62089d991b12793eb63327bf6649198525efad89f292b6bc07d8ddcba38245c01f738f24af7f45c9b69ef2e061a8c54884f7b59ef163c74c1de757a3",
+            "file": "src/app/movies/models/movie.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class Movie {\r\n    title: string;\r\n    year: string;\r\n    imdbId: string;\r\n    type: string;\r\n    poster: string;\r\n\r\n    constructor(movieDto: MovieDto) {\r\n        this.title = movieDto.Title;\r\n        this.year = movieDto.Year;\r\n        this.imdbId = movieDto.imdbID;\r\n        this.type = movieDto.Type;\r\n        this.poster = movieDto.Poster;\r\n    }\r\n}\r\n\r\nexport interface MovieSearchResultDto {\r\n    Search: MovieDto[];\r\n    totalResults: string;\r\n    Response: string;\r\n}\r\n\r\nexport interface MovieDto {\r\n    Title: string;\r\n    Year: string;\r\n    imdbID: string;\r\n    Type: string;\r\n    Poster: string;\r\n}",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "movieDto",
+                        "type": "MovieDto",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 6,
+                "jsdoctags": [
+                    {
+                        "name": "movieDto",
+                        "type": "MovieDto",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "imdbId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "poster",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "year",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "MovieMetadata",
+            "id": "class-MovieMetadata-664e68a7d87ac6f614cda4c83e5f37a8448e6e86e482c4460527d505d2487ab6c22ecefc0c690f203b2cbbe0b7645c29d86e07f2ce969ddb8aa9fbf46ce5e2fe",
+            "file": "src/app/movies/models/movie-metadata.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class MovieMetadata {\r\n    title: string; \r\n    year: string;\r\n    rated: string;\r\n    released: Date;\r\n    runtime: string;\r\n    plot: string;\r\n    poster: string;\r\n    imdbId: string;\r\n\r\n    constructor(movieMetdataDto: MovieMetdataDto) {\r\n        this.title = movieMetdataDto.Title;\r\n        this.year = movieMetdataDto.Year;\r\n        this.rated = movieMetdataDto.Rated;\r\n        this.released = new Date(Date.parse(movieMetdataDto.Released));\r\n        this.runtime = movieMetdataDto.Runtime;\r\n        this.plot = movieMetdataDto.Plot;\r\n        this.poster = movieMetdataDto.Poster;\r\n        this.imdbId = movieMetdataDto.imdbID;\r\n    }\r\n}\r\n\r\nexport interface MovieMetdataDto {\r\n    Title: string; \r\n    Year: string;\r\n    Rated: string;\r\n    Released: string;\r\n    Runtime: string;\r\n    Genre: string;\r\n    Director: string;\r\n    Writer: string;\r\n    Actors: string;\r\n    Plot: string;\r\n    Language: string;\r\n    Country: string;\r\n    Awards: string;\r\n    Poster: string;\r\n    Ratings: RatingDto[];\r\n    Metascore: string;\r\n    imdbRating: string;\r\n    imdbVotes: string;\r\n    imdbID: string;\r\n    Type: string;\r\n    DVD: string;\r\n    BoxOffice: string;\r\n    Production: string;\r\n    Website: string;\r\n    Response: string;\r\n}\r\n\r\ninterface RatingDto {\r\n    Source: string;\r\n    Value: string;\r\n}",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "movieMetdataDto",
+                        "type": "MovieMetdataDto",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "movieMetdataDto",
+                        "type": "MovieMetdataDto",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "imdbId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "plot",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "poster",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "rated",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "released",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Date",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "runtime",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "year",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-5c1484485a92dbd3855eef719a5f09650711f591ea99bb3eba191cfb7c3fbadd41eb1d3d8908a1cd51680eb331ba7054a787f76e019faff387436828f1cd5b54",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  constructor() {}\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "templateData": "<app-movies-list></app-movies-list>"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-4ef205c97a334c309aa4001c8ab4a6d9571dcae18d0e85aaf0d367467ab5d3a9f13ab3573726f1fcb409bc9b49894dadfb80b1bbe1b6ba7041455ad9d4922004",
+            "file": "src/stories/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 26,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 711,
+                            "end": 724,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 712,
+                                "end": 720,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 40,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 20,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 32,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 46,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 48
+                    }
+                }
+            }
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-a557eec14f72c438a8033301f4d6ce023e0a1844a3b06ec2b38794a612acc31735ae78a5ee10071b230c8c20d699eb914554e69d07ade54adb371da8efb464cc",
+            "file": "src/stories/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 65,
+                    "type": "User | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 74,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 68,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 71,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n\n.welcome {\n  color: #333;\n  font-size: 14px;\n  margin-right: 10px;\n}\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "MoviesFiltersComponent",
+            "id": "component-MoviesFiltersComponent-1d0296a5089316e6ddb9a39da9a48af18b19a8a819ba62925477b005bbd82e92468f6064b5c57bc5d6e4367345db1da969167d268b2902672aaa82bd1ecc356e",
+            "file": "src/app/movies/components/movies-filters/movies-filters.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-movies-filters",
+            "styleUrls": [
+                "./movies-filters.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./movies-filters.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "currentFilter",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MovieFilters",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "movieFilters",
+                    "defaultValue": "MovieFilters",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getFilteredMovies",
+                    "args": [
+                        {
+                            "name": "movieFilter",
+                            "type": "MovieFilters",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "movieFilter",
+                            "type": "MovieFilters",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { MovieFilters } from '../../constants/movies-filters';\r\nimport { MoviesSubjectService } from '../../services/movies-subject.service';\r\n\r\n@Component({\r\n    selector: 'app-movies-filters',\r\n    templateUrl: './movies-filters.component.html',\r\n    styleUrls: ['./movies-filters.component.scss']\r\n})\r\n\r\nexport class MoviesFiltersComponent {\r\n    movieFilters: typeof MovieFilters = MovieFilters;\r\n    currentFilter: MovieFilters;\r\n    constructor(private moviesSubjectService: MoviesSubjectService) { }\r\n\r\n    getFilteredMovies(movieFilter: MovieFilters) {\r\n        this.currentFilter = movieFilter;\r\n        this.moviesSubjectService.getFilteredMoviesByYear(movieFilter);\r\n    }\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../../app-colors.scss';\r\n\r\n.movies-filters-container {\r\n    margin-bottom: 2em;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: flex-end;\r\n}\r\n\r\nbutton {\r\n    height: 36px;\r\n    width: 92px;\r\n    border-width: 1px;\r\n    border-color: $color-filter-inactive-border;\r\n    color: $color-filter-inactive-text;\r\n    background-color: $color-filter-inactive;\r\n\r\n    &:nth-child(1) {\r\n        border-radius: 3px 0px 0px 3px;\r\n    }\r\n    &:nth-child(2) {\r\n        border-radius: 0px 0px 0px 0px;\r\n    }\r\n    &:nth-child(3) {\r\n        border-radius: 0px 0px 0px 0px;\r\n    }\r\n    &:nth-child(4) {\r\n        border-radius: 0px 3px 3px 0px;\r\n    }\r\n    &.current-filter {\r\n        background-color: $color-filter-active;\r\n        color: $color-filter-active-text;\r\n        border-color: $color-filter-active-border;\r\n    }\r\n}",
+                    "styleUrl": "./movies-filters.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "moviesSubjectService",
+                        "type": "MoviesSubjectService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "moviesSubjectService",
+                        "type": "MoviesSubjectService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<section class=\"movies-filters-container\" aria-label=\"List of four filter options for Batman movies\">\r\n    <ul>\r\n        <li style=\"display:inline\">\r\n            <button\r\n            type=\"button\"\r\n            aria-label=\"Button filters movies down to those released in the two thousand and tens\"\r\n            [ngClass]=\"{'current-filter': currentFilter === movieFilters.twoThousandTens}\"\r\n            (click)=\"getFilteredMovies(movieFilters.twoThousandTens)\">{{movieFilters.twoThousandTens}}\r\n        </button>\r\n        </li>\r\n        <li style=\"display:inline\">\r\n            <button\r\n            type=\"button\"\r\n            aria-label=\"Button filters movies down to those released in the two thousands\"\r\n            [ngClass]=\"{'current-filter': currentFilter === movieFilters.twoThousands}\"\r\n            (click)=\"getFilteredMovies(movieFilters.twoThousands)\">{{movieFilters.twoThousands}}\r\n        </button>\r\n        </li>\r\n        <li style=\"display:inline\">\r\n            <button\r\n            type=\"button\"\r\n            aria-label=\"Button filters movies down to those released in the nineteen nineties\"\r\n            [ngClass]=\"{'current-filter': currentFilter === movieFilters.nineteenNineties}\"\r\n            (click)=\"getFilteredMovies(movieFilters.nineteenNineties)\">{{movieFilters.nineteenNineties}}\r\n        </button>\r\n        </li>\r\n        <li style=\"display:inline\">\r\n            <button\r\n            type=\"button\"\r\n            aria-label=\"Button filters movies down to those released in the nineteen eighties\"\r\n            [ngClass]=\"{'current-filter': currentFilter === movieFilters.nineteenEighties}\"\r\n            (click)=\"getFilteredMovies(movieFilters.nineteenEighties)\">{{movieFilters.nineteenEighties}}\r\n        </button>\r\n        </li>\r\n    </ul>\r\n</section>"
+        },
+        {
+            "name": "MoviesListComponent",
+            "id": "component-MoviesListComponent-82f9daa488114a1a6a862bdd9e028659d34a2f29eb017d1a76642ef0c4e8e325404896616f4dd99e9adeec7cb6e6164cebe19e2742db941d279c6fc708a5a3a0",
+            "file": "src/app/movies/components/movies-list/movies-list.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-movies-list",
+            "styleUrls": [
+                "./movies-list.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./movies-list.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "movieMetadata$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<MovieMetadata[]>",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "goToImdbSite",
+                    "args": [
+                        {
+                            "name": "imdbId",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "imdbId",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { Observable } from 'rxjs';\r\nimport { MovieMetadata } from '../../models/movie-metadata';\r\nimport { MoviesSubjectService } from '../../services/movies-subject.service';\r\n\r\n@Component({\r\n    selector: 'app-movies-list',\r\n    templateUrl: './movies-list.component.html',\r\n    styleUrls: ['./movies-list.component.scss']\r\n})\r\n\r\nexport class MoviesListComponent implements OnInit {\r\n    movieMetadata$: Observable<MovieMetadata[]>;\r\n    \r\n    constructor(private moviesSubjectService: MoviesSubjectService) {\r\n        this.movieMetadata$ = this.moviesSubjectService.moviesMetadata$\r\n    }\r\n\r\n    ngOnInit() {\r\n        const searchParameter = 'Batman';\r\n        this.moviesSubjectService.getMovies(searchParameter);\r\n    }\r\n\r\n    goToImdbSite(imdbId: string) {\r\n        window.open(`https://imdb.com/title/${imdbId}`, '_blank');\r\n    }\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../../app-colors.scss';\r\n\r\n.container {\r\n  max-width: 42em;\r\n\tpadding: 24px;\r\n\r\n  .card {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    margin-bottom: 1em;\r\n    border: 2px solid $color-movie-list-card-border;\r\n    border-radius: 8px;\r\n    overflow: hidden;\r\n    background-color: $color-movie-list-card;\r\n  \r\n      img {\r\n        margin: 1em;\r\n        max-width: 100%;\r\n        min-height: 100%;\r\n        width: auto;\r\n        object-fit: cover;\r\n        object-position: 50% 50%;\r\n        height: 12em;\r\n        border-radius: 0.5em;\r\n    }\r\n    \r\n    .text-wrapper {\r\n      flex: 4 1 20em;\r\n      padding: 1em;\r\n      position: relative;\r\n  \r\n      .title {\r\n        margin: 0;\r\n        font-size: 1.2em;\r\n        font-family: 'Open Sans';\r\n        font-weight: 400;\r\n        color: $color-title-text;\r\n      }\r\n  \r\n      hr {\r\n        margin-top: 0;\r\n        margin-bottom: 0;\r\n        color: $color-seperator-line;\r\n      }\r\n  \r\n      .info-wrapper {\r\n        .rated, .runtime, .release {\r\n          display: inline-block;\r\n          margin: 8px;\r\n          font-size: .875em;\r\n          font-weight: 400;\r\n          font-size: 0.875em;\r\n        }\r\n    \r\n        .rated {\r\n          font-family:'Courier New', Courier, monospace;\r\n          color: $color-rating-text;\r\n          border: 1px solid $color-rating-border;\r\n          padding-left: .4em;\r\n          padding-right: .4em;\r\n          border-radius: .2em;\r\n        }\r\n      \r\n        .release {\r\n            float: right;\r\n            color: $color-released-text;\r\n            font-family: 'Helvetica';\r\n        }\r\n      \r\n        .runtime {\r\n          font-family: 'Arial';\r\n          color: $color-runtime-text;\r\n        }\r\n      }\r\n    \r\n      .plot {\r\n        font-family: 'Helvetica';\r\n        font-size: 1em;\r\n        font-weight: 400;\r\n        color: $color-plot-text\r\n      }\r\n  \r\n      button {\r\n        position: absolute;\r\n        bottom: 0;\r\n        right: 0;\r\n        margin: 1em;\r\n        padding: .5em 3em .5em 3em;\r\n        border-radius: .4em;\r\n        border: 1px solid $color-movie-list-card;\r\n        color: $color-imdb-button-text;\r\n        background-color: $color-imdb-button;\r\n        font-weight: bold;\r\n        font-family: 'Helvetica';\r\n        font-size: 1em;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n@media(max-width: 414px) {\r\n    .card {\r\n        .release {\r\n            float: none;\r\n        }\r\n        \r\n        button {\r\n            left: 0;\r\n            max-width: 14em;\r\n        }\r\n    }\r\n}",
+                    "styleUrl": "./movies-list.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "moviesSubjectService",
+                        "type": "MoviesSubjectService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "moviesSubjectService",
+                        "type": "MoviesSubjectService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<main class=\"container\" aria-label=\"Batman movie application that allows filtering by decade\">\r\n    <app-movies-filters></app-movies-filters>\r\n    <section aria-label=\"List of Batman movies based on selected filter\">\r\n        <ul>\r\n            <li *ngFor=\"let movie of movieMetadata$ | async\" class=\"card\">\r\n                <img src=\"{{movie.poster}}\" alt=\"{{movie.title}} Movie Poster\">\r\n                <section class=\"text-wrapper\" aria-label=\"Movie metadata\">\r\n                    <h3 class=\"title\">{{movie.title}}</h3>\r\n                    <hr class=\"solid\" aria-hidden=\"true\">\r\n                    <div class=\"info-wrapper\">\r\n                        <span class=\"rated\">{{movie.rated}}</span>\r\n                        <span class=\"runtime\">{{movie.runtime}}</span>\r\n                        <span class=\"release\">{{movie.released | date:'dd MMM yyyy'}}</span>\r\n                    </div>\r\n                    <p class=\"plot\">{{movie.plot}}</p>\r\n                    <br>\r\n                    <br>\r\n                    <button type=\"button\" aria-label=\"Button opens imdb movie page in a new tab\" (click)=\"goToImdbSite(movie.imdbId)\">View on IMDB</button>\r\n                </section>\r\n            </li>\r\n        </ul>\r\n    </section>\r\n</main>"
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-7126d8c2607c946741c651482413b43feb72b2d63cac9d3ac173fde206a5e635eb4cdbf7ca7ac9327c7d4d05cf7ef619144c34c11609ad677081d0ee4e855064",
+            "file": "src/stories/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.css"
+            ],
+            "styles": [],
+            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 64
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "doCreateAccount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 74,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogin",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 70,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 66,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nsection h2 {\n  font-weight: 900;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nsection p {\n  margin: 1em 0;\n}\n\nsection a {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nsection ul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nsection li {\n  margin-bottom: 8px;\n}\n\nsection .tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\nsection .tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\nsection .tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\nsection .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "styleUrl": "./page.css"
+                }
+            ],
+            "stylesData": ""
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-191ffca270277127e62f081b0c087db505368f8aba37e670531e08afefe5f96f6c39acc147b74a2cc17ca7e30b3192ad1cc4ccf28fbfd143fd8a103ac3213d2c",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppComponent } from './app.component';\r\nimport { MoviesModule } from './movies/movies.module';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    HttpClientModule,\r\n    MoviesModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "MoviesModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "MoviesModule",
+            "id": "module-MoviesModule-75f30cbe693ff628c29a219f181ab0fea375ae9ceba6db2eead55181a12f435d4a4404ddb2bebb420c6609987496ec08e4a7343f3ff8fc3f5b00764d208b02ea",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/movies/movies.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MoviesService } from './services/movies.service';\r\nimport { MoviesSubjectService } from './services/movies-subject.service';\r\nimport { MoviesListComponent } from './components/movies-list/movies-list.component';\r\nimport { MoviesFiltersComponent } from './components/movies-filters/movies-filters.component';\r\n\r\n@NgModule({\r\n  declarations: [MoviesListComponent, MoviesFiltersComponent],\r\n  imports: [\r\n    CommonModule\r\n  ],\r\n  exports: [MoviesListComponent],\r\n  providers: [MoviesService, MoviesSubjectService]\r\n})\r\nexport class MoviesModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": [
+                        {
+                            "name": "MoviesService"
+                        },
+                        {
+                            "name": "MoviesSubjectService"
+                        }
+                    ]
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "MoviesFiltersComponent"
+                        },
+                        {
+                            "name": "MoviesListComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "MoviesListComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "apiKey",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/api-credentials.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'98c1ccfd'"
+            },
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "literal type"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Page>",
+                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [
+            {
+                "name": "MovieFilters",
+                "childs": [
+                    {
+                        "name": "nineteenEighties",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "1980's"
+                    },
+                    {
+                        "name": "nineteenNineties",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "1990's"
+                    },
+                    {
+                        "name": "twoThousands",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "2000's"
+                    },
+                    {
+                        "name": "twoThousandTens",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "2010's"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/movies/constants/movies-filters.ts"
+            }
+        ],
+        "groupedVariables": {
+            "src/app/api-credentials.ts": [
+                {
+                    "name": "apiKey",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/api-credentials.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'98c1ccfd'"
+                }
+            ],
+            "src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/stories/Button.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Button>",
+                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/Header.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Header>",
+                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/Page.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Page>",
+                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {
+            "src/app/movies/constants/movies-filters.ts": [
+                {
+                    "name": "MovieFilters",
+                    "childs": [
+                        {
+                            "name": "nineteenEighties",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "1980's"
+                        },
+                        {
+                            "name": "nineteenNineties",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "1990's"
+                        },
+                        {
+                            "name": "twoThousands",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "2000's"
+                        },
+                        {
+                            "name": "twoThousandTens",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "2010's"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/app/movies/constants/movies-filters.ts"
+                }
+            ]
+        },
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 2,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/api-credentials.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "apiKey",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/movies/components/movies-filters/movies-filters.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MoviesFiltersComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/movies/components/movies-list/movies-list.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MoviesListComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/movies/models/movie-metadata.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "MovieMetadata",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/movies/models/movie-metadata.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MovieMetdataDto",
+                "coveragePercent": 0,
+                "coverageCount": "0/26",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/movies/models/movie-metadata.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "RatingDto",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/movies/models/movie.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "Movie",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/movies/models/movie.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MovieDto",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/movies/models/movie.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MovieSearchResultDto",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/movies/services/movies-subject.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "MoviesSubjectService",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/movies/services/movies.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "MoviesService",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/User.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
