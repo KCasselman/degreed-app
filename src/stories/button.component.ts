@@ -2,14 +2,14 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'storybook-button',
-  template: ` <button
-    type="button"
-    (click)="onClick.emit($event)"
-    [ngClass]="classes"
-    [ngStyle]="{ 'background-color': backgroundColor }"
-  >
-    {{ label }}
-  </button>`,
+  template: `<button
+  type="button"
+  (click)="onClick.emit($event)"
+  [ngClass]="classes"
+  [ngStyle]="{ 'background-color': backgroundColor }"
+>
+  {{ label }}
+</button>`,
   styleUrls: ['./button.css'],
 })
 export default class ButtonComponent {
@@ -24,6 +24,12 @@ export default class ButtonComponent {
    */
   @Input()
   backgroundColor?: string;
+
+  /**
+   * What border radius to use
+   */
+  @Input()
+  borderRadius?: string;
 
   /**
    * How large should the button be?

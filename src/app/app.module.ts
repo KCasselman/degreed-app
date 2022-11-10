@@ -12,7 +12,7 @@ import { MoviesModule } from './movies/movies.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    MoviesModule
+    MoviesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
