@@ -6,12 +6,10 @@
   cursor: pointer;
   display: inline-block;
   line-height: 1;
-  /* height: 36px;
-  width: 92px;
   border-width: 1px;
   border-color: #C2CAD0;
   color: #61696E;
-  background-color: #F7F8F9; */
+  background-color: #F7F8F9;
 }
 .storybook-button--primary {
   color: white;
@@ -34,39 +32,3 @@
   font-size: 16px;
   padding: 12px 24px;
 }
-
-/* @import '../../../../app-colors.scss';
-
-.movies-filters-container {
-    margin-bottom: 2em;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-
-button {
-    height: 36px;
-    width: 92px;
-    border-width: 1px;
-    border-color: $color-filter-inactive-border;
-    color: $color-filter-inactive-text;
-    background-color: $color-filter-inactive;
-
-    &:nth-child(1) {
-        border-radius: 3px 0px 0px 3px;
-    }
-    &:nth-child(2) {
-        border-radius: 0px 0px 0px 0px;
-    }
-    &:nth-child(3) {
-        border-radius: 0px 0px 0px 0px;
-    }
-    &:nth-child(4) {
-        border-radius: 0px 3px 3px 0px;
-    }
-    &.current-filter {
-        background-color: $color-filter-active;
-        color: $color-filter-active-text;
-        border-color: $color-filter-active-border;
-    }
-} */

@@ -15,7 +15,8 @@
                     <p class="plot">{{movie.plot}}</p>
                     <br>
                     <br>
-                    <button type="button" aria-label="Button opens imdb movie page in a new tab" (click)="goToImdbSite(movie.imdbId)">View on IMDB</button>
+                    <storybook-button aria-label="Button opens imdb movie page in a new tab" (click)="goToImdbSite(movie.imdbId)" label="View on IMDB" borderRadius="0.4em" backgroundColor="#F9B44A" position="absolute" bottom="0" right="0" margin="1em" padding="0.5em 3em 0.5em 3em" border="1px solid #E8EBEE" color="#FFFFFF" fontWeight="bold" fontFamily="Helvetica" fontSize="1em"></storybook-button>
+                    <!-- <button type="button" aria-label="Button opens imdb movie page in a new tab" (click)="goToImdbSite(movie.imdbId)">View on IMDB</button> -->
                 </section>
             </li>
         </ul>

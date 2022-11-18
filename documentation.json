@@ -931,7 +931,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-273724f5957808ea6c706c6b2581c223c079d752afcf704c97ff57a7ed57d2bb224d4fc8b17f492213e4cf10e9bd78c2bf8d0bb0216927405cace04264829528",
+            "id": "component-ButtonComponent-c1e35c4802bb89c47cf051b4b2c5f51a601c567cea32d64a58fc6a236c3eb9d830b56930e4e681a1f74ffbc7f912bf0323cb3127a0cc9944d4e0d75894ec40fa",
             "file": "src/stories/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -943,9 +943,8 @@
                 "./button.css"
             ],
             "styles": [],
-            "templateUrl": [
-                "./button.component.html"
-            ],
+            "template": "<button  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n  {{ label }}\n</button>",
+            "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
                 {
@@ -954,7 +953,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nWhat background color to use\n",
                     "description": "<p>What background color to use</p>\n",
-                    "line": 19,
+                    "line": 26,
                     "type": "string",
                     "decorators": []
                 },
@@ -964,7 +963,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nWhat border radius to use\n",
                     "description": "<p>What border radius to use</p>\n",
-                    "line": 25,
+                    "line": 32,
                     "type": "string",
                     "decorators": []
                 },
@@ -975,15 +974,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 644,
-                            "end": 657,
+                            "pos": 776,
+                            "end": 789,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 645,
-                                "end": 653,
+                                "pos": 777,
+                                "end": 785,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -995,7 +994,7 @@
                     ],
                     "rawdescription": "\n\nButton contents\n\n",
                     "description": "<p>Button contents</p>\n",
-                    "line": 39,
+                    "line": 46,
                     "type": "string",
                     "decorators": []
                 },
@@ -1006,7 +1005,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nIs this the principal call to action on the page?\n",
                     "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 13,
+                    "line": 20,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1017,7 +1016,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nHow large should the button be?\n",
                     "description": "<p>How large should the button be?</p>\n",
-                    "line": 31,
+                    "line": 38,
                     "type": "\"small\" | \"medium\" | \"large\"",
                     "decorators": []
                 }
@@ -1030,7 +1029,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nOptional click handler\n",
                     "description": "<p>Optional click handler</p>\n",
-                    "line": 45,
+                    "line": 52,
                     "type": "EventEmitter"
                 }
             ],
@@ -1043,7 +1042,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * What border radius to use\n   */\n  @Input()\n  borderRadius?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: `<button\n  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n  {{ label }}\n</button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * What border radius to use\n   */\n  @Input()\n  borderRadius?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1059,11 +1058,10 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 47
+                        "line": 54
                     }
                 }
-            },
-            "templateData": "<button\r\n    type=\"button\"\r\n    (click)=\"onClick.emit($event)\"\r\n    [ngClass]=\"classes\"\r\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n  >\r\n    {{ label }}\r\n  </button>"
+            }
         },
         {
             "name": "HeaderComponent",
@@ -1251,7 +1249,7 @@
                     }
                 ]
             },
-            "templateData": "<section class=\"movies-filters-container\" aria-label=\"List of four filter options for Batman movies\">\r\n    <ul>\r\n        <li style=\"display:inline\">\r\n            <button\r\n            type=\"button\"\r\n            aria-label=\"Button filters movies down to those released in the two thousand and tens\"\r\n            [ngClass]=\"{'current-filter': currentFilter === movieFilters.twoThousandTens}\"\r\n            (click)=\"getFilteredMovies(movieFilters.twoThousandTens)\">{{movieFilters.twoThousandTens}}\r\n        </button>\r\n        </li>\r\n        <li style=\"display:inline\">\r\n            <button\r\n            type=\"button\"\r\n            aria-label=\"Button filters movies down to those released in the two thousands\"\r\n            [ngClass]=\"{'current-filter': currentFilter === movieFilters.twoThousands}\"\r\n            (click)=\"getFilteredMovies(movieFilters.twoThousands)\">{{movieFilters.twoThousands}}\r\n        </button>\r\n        </li>\r\n        <li style=\"display:inline\">\r\n            <button\r\n            type=\"button\"\r\n            aria-label=\"Button filters movies down to those released in the nineteen nineties\"\r\n            [ngClass]=\"{'current-filter': currentFilter === movieFilters.nineteenNineties}\"\r\n            (click)=\"getFilteredMovies(movieFilters.nineteenNineties)\">{{movieFilters.nineteenNineties}}\r\n        </button>\r\n        </li>\r\n        <li style=\"display:inline\">\r\n            <button\r\n            type=\"button\"\r\n            aria-label=\"Button filters movies down to those released in the nineteen eighties\"\r\n            [ngClass]=\"{'current-filter': currentFilter === movieFilters.nineteenEighties}\"\r\n            (click)=\"getFilteredMovies(movieFilters.nineteenEighties)\">{{movieFilters.nineteenEighties}}\r\n        </button>\r\n        </li>\r\n    </ul>\r\n</section>"
+            "templateData": "<section class=\"movies-filters-container\" aria-label=\"List of four filter options for Batman movies\">\r\n    <storybook-button></storybook-button>\r\n    <ul>\r\n        <li style=\"display:inline\">\r\n            <button\r\n            type=\"button\"\r\n            aria-label=\"Button filters movies down to those released in the two thousand and tens\"\r\n            [ngClass]=\"{'current-filter': currentFilter === movieFilters.twoThousandTens}\"\r\n            (click)=\"getFilteredMovies(movieFilters.twoThousandTens)\">{{movieFilters.twoThousandTens}}\r\n        </button>\r\n        </li>\r\n        <li style=\"display:inline\">\r\n            <button\r\n            type=\"button\"\r\n            aria-label=\"Button filters movies down to those released in the two thousands\"\r\n            [ngClass]=\"{'current-filter': currentFilter === movieFilters.twoThousands}\"\r\n            (click)=\"getFilteredMovies(movieFilters.twoThousands)\">{{movieFilters.twoThousands}}\r\n        </button>\r\n        </li>\r\n        <li style=\"display:inline\">\r\n            <button\r\n            type=\"button\"\r\n            aria-label=\"Button filters movies down to those released in the nineteen nineties\"\r\n            [ngClass]=\"{'current-filter': currentFilter === movieFilters.nineteenNineties}\"\r\n            (click)=\"getFilteredMovies(movieFilters.nineteenNineties)\">{{movieFilters.nineteenNineties}}\r\n        </button>\r\n        </li>\r\n        <li style=\"display:inline\">\r\n            <button\r\n            type=\"button\"\r\n            aria-label=\"Button filters movies down to those released in the nineteen eighties\"\r\n            [ngClass]=\"{'current-filter': currentFilter === movieFilters.nineteenEighties}\"\r\n            (click)=\"getFilteredMovies(movieFilters.nineteenEighties)\">{{movieFilters.nineteenEighties}}\r\n        </button>\r\n        </li>\r\n    </ul>\r\n</section>"
         },
         {
             "name": "MoviesListComponent",
@@ -1455,13 +1453,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-191ffca270277127e62f081b0c087db505368f8aba37e670531e08afefe5f96f6c39acc147b74a2cc17ca7e30b3192ad1cc4ccf28fbfd143fd8a103ac3213d2c",
+            "id": "module-AppModule-773e3196a5627123e66ceca1e13c9c1be1d756b79b037ea7a160b9b5891e479e832c41e6d701d3554a30402e55628e65eb20da089a362ff48704cdf75c945c1e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppComponent } from './app.component';\r\nimport { MoviesModule } from './movies/movies.module';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    HttpClientModule,\r\n    MoviesModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppComponent } from './app.component';\r\nimport { MoviesModule } from './movies/movies.module';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    HttpClientModule,\r\n    MoviesModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1503,13 +1501,13 @@
         },
         {
             "name": "MoviesModule",
-            "id": "module-MoviesModule-75f30cbe693ff628c29a219f181ab0fea375ae9ceba6db2eead55181a12f435d4a4404ddb2bebb420c6609987496ec08e4a7343f3ff8fc3f5b00764d208b02ea",
+            "id": "module-MoviesModule-a9dc51cf2b0d783f70448194f16bb36f6c378e90b42da1828a05d9594e3e3abc90909d70efe6da686679dc9bf16512f89d7f375fa362000fcaf1b5856e30db19",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/movies/movies.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MoviesService } from './services/movies.service';\r\nimport { MoviesSubjectService } from './services/movies-subject.service';\r\nimport { MoviesListComponent } from './components/movies-list/movies-list.component';\r\nimport { MoviesFiltersComponent } from './components/movies-filters/movies-filters.component';\r\n\r\n@NgModule({\r\n  declarations: [MoviesListComponent, MoviesFiltersComponent],\r\n  imports: [\r\n    CommonModule\r\n  ],\r\n  exports: [MoviesListComponent],\r\n  providers: [MoviesService, MoviesSubjectService]\r\n})\r\nexport class MoviesModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MoviesService } from './services/movies.service';\r\nimport { MoviesSubjectService } from './services/movies-subject.service';\r\nimport { MoviesListComponent } from './components/movies-list/movies-list.component';\r\nimport { MoviesFiltersComponent } from './components/movies-filters/movies-filters.component';\r\nimport ButtonComponent from 'src/stories/button.component';\r\n\r\n@NgModule({\r\n  declarations: [MoviesListComponent, MoviesFiltersComponent, ButtonComponent],\r\n  imports: [\r\n    CommonModule\r\n  ],\r\n  exports: [MoviesListComponent],\r\n  providers: [MoviesService, MoviesSubjectService]\r\n})\r\nexport class MoviesModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1525,6 +1523,9 @@
                 {
                     "type": "declarations",
                     "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        },
                         {
                             "name": "MoviesFiltersComponent"
                         },
